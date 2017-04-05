@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sua Localização no Google Maps</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="notSupported"></div>
+    <div class="map" id="map"></div>
+    <button type="button" onclick="getLocation()">Localização</button>
+    <script src="js/geolocation.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYKybS0TgPVl0Mdy917IkZQAo4_bVAWA0&callback=myMap"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYKybS0TgPVl0Mdy917IkZQAo4_bVAWA0&callback=getLocation"></script>
+</body>
+
+</html>
