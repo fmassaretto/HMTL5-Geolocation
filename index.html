@@ -23,8 +23,18 @@
                     message: body
                 }, function(response) {
                     if (!response || response.error) {
-                        console.log('Error occured');
+                        console.log('Error occured POST');
                         console.log(response.error);
+                        if (response.error.message == "Duplicate status message") {
+                            var postId = response.id;
+                            FB.api(postId, 'delete', function(response) {
+                                if (!response || response.error) {
+                                    console.log('Error occured DELETE');
+                                } else {
+                                    console.log('Post was deleted');
+                                }
+                            });
+                        }
                     } else {
                         console.log('Post ID: ' + response.id);
                     }
