@@ -25,7 +25,7 @@
                     if (!response || response.error) {
                         console.log('Error occured POST');
                         console.log(response.error);
-                        if (response.error.message == "Duplicate status message") {
+                        if (response.error["message"] == "Duplicate status message") {
                             var postId = response.id;
                             FB.api(postId, 'delete', function(response) {
                                 if (!response || response.error) {
