@@ -18,7 +18,7 @@
             FB.AppEvents.logPageView();
 
             FB.login(function(response) {
-                var body = 'Reading JS SDK documentation 2';
+                var body = 'Publicado com sucesso!';
                 FB.api('/me/feed', 'post', {
                     message: body
                 }, function(response) {
@@ -26,7 +26,7 @@
                         console.log('Error occured POST');
                         console.log(response.error);
                         console.log(response.error["message"]);
-                        if (response.error["message"] == "Duplicate status message") {
+                        if (response.error["message"] === "Duplicate status message") {
                             var postId = response.id;
                             FB.api(postId, 'delete', function(response) {
                                 if (!response || response.error) {
